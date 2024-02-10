@@ -1,6 +1,3 @@
 flask
 requests
-json
-io
-PIL
 requests_toolbelt
