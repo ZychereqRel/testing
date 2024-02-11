@@ -91,12 +91,12 @@ def search():
             response = requests.get(url)
             image = Image.open(BytesIO(response.content))
             image_path = "image_from_url.png"
-            image.save(image_path)
+            image.save('static/' + image_path)
 
             encoder = MultipartEncoder(
                 fields={
                     'list_of_strings': '[]',
-                    'image': (image_path, open(image_path, 'rb'), 'image/png')
+                    'image': (image_path, open('static/' + image_path, 'rb'), 'image/png')
                 }
             )
 
@@ -121,7 +121,7 @@ def search():
     else:
         result_text = "Brak URL do przeszukania."
 
-    return render_template('search.html', result=result_text)
+    return render_template('search.html', result=result_text, image_path=image_path)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
