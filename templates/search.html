@@ -9,9 +9,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="result">
-            <pre>{{ result }}</pre>
+        <div class="result-container">
+            <img src="{{url_for('static', filename=image_path)}}" class="result-image">
+            <div class="result-message">
+                <p>{{result}}</p>
+            </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
