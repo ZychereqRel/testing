@@ -85,7 +85,7 @@ def main():
 
 @app.route('/search', methods=['GET'])
 def search():
-    url = request.args.get('url', default = "", type = str)
+    url = request.args.get('url', default="", type=str)
     if url:
         try:
             response = requests.get(url)
@@ -121,8 +121,7 @@ def search():
     else:
         result_text = "Brak URL do przeszukania."
 
-    return result_text
+    return render_template('search.html', result=result_text)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, port=port, host='0.0.0.0')
+    app.run(debug=True)
