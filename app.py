@@ -43,7 +43,7 @@ def main():
                 'sec-gpc': '1',
             }
 
-            response = requests.post("https://us-central1-phaseoneai.cloudfunctions.net/locate_image", headers=headers, data=encoder)
+            response = requests.post("https://locate-image-7cs5mab6na-uc.a.run.app", headers=headers, data=encoder)
             result_text = json.loads(response.text).get("message", "")
 
         elif 'url' in request.form:
@@ -75,7 +75,7 @@ def main():
                         'sec-gpc': '1',
                     }
 
-                    response = requests.post("https://us-central1-phaseoneai.cloudfunctions.net/locate_image", headers=headers, data=encoder)
+                    response = requests.post("https://locate-image-7cs5mab6na-uc.a.run.appe", headers=headers, data=encoder)
                     result_text = json.loads(response.text).get("message", "")
 
                 except Exception as e:
@@ -113,7 +113,7 @@ def search():
                 'sec-gpc': '1',
             }
 
-            response = requests.post("https://us-central1-phaseoneai.cloudfunctions.net/locate_image", headers=headers, data=encoder)
+            response = requests.post("https://locate-image-7cs5mab6na-uc.a.run.app", headers=headers, data=encoder)
             result_text = json.loads(response.text).get("message", "")
 
         except Exception as e:
